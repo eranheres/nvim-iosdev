@@ -4,3 +4,4 @@
 
 -- Automatically update the buffer when leaving insert mode
 require("config.common-autocmds")
+require("common.config.common-autocmds")
