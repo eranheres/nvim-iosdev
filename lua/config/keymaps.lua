@@ -31,13 +31,4 @@ vim.keymap.set("n", "<leader>rx", "<cmd>XcodebuildQuickfixLine<cr>", { desc = "Q
 vim.keymap.set("n", "<leader>ra", "<cmd>XcodebuildCodeActions<cr>", { desc = "Show Code Actions" })
 
 -- debugging
-vim.keymap.set("n", "<F5>", function()
-	require("dap").continue()
-end)
-vim.keymap.set("n", "<F8>", function()
-	require("dap").step_over()
-end)
-vim.keymap.set("n", "<F7>", function()
-	require("dap").step_into()
-end)
 require("common.config.common-keymaps")
