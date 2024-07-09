@@ -23,13 +23,13 @@ return {
 				-- indent = { enable = true },
 				autotag = { enable = false },
 				ensure_installed = {
+					"swift",
 					"json",
 					"yaml",
 					"markdown",
 					"markdown_inline",
 					"lua",
 					"gitignore",
-					"swift",
 				},
 				auto_install = true,
 			})

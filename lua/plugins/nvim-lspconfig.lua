@@ -1,4 +1,4 @@
-return {
+return { 
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
@@ -13,8 +13,8 @@ return {
     local on_attach = function(_, bufnr)
       opts.buffer = bufnr
 
-      opts.desc = "Show line diagnostics"
-      vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+      --opts.desc = "Show line diagnostics"
+      --vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
       opts.desc = "Show documentation for what is under cursor"
       vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
