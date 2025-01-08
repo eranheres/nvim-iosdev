@@ -8,6 +8,7 @@ return {
     lint.linters_by_ft = {
       swift = { "swiftlint" },
     }
+    --lint.linters.swiftlint.args = { "-q", "--config", "/tmp/.swiftlint.yml", "--report=json", "-" }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 

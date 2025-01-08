@@ -1,3 +1,3 @@
 return { 
-  require("common.plugins.all") 
+  -- require("common.plugins.all") 
 }

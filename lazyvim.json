@@ -1,9 +1,13 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.coding.copilot"
+    "lazyvim.plugins.extras.ai.copilot",
+    "lazyvim.plugins.extras.editor.harpoon2",
+    "lazyvim.plugins.extras.editor.inc-rename",
+    "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lsp.neoconf"
   ],
   "news": {
-    "NEWS.md": "3314"
+    "NEWS.md": "10960"
   },
-  "version": 3
+  "version": 7
 }

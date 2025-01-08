@@ -1,10 +1,11 @@
 return {
-'stevearc/conform.nvim', 
-opts = {
-  formatters_by_ft = {
-        swift = { "swiftformat" },
-  }
-}}
+	"stevearc/conform.nvim",
+	opts = {
+		formatters_by_ft = {
+			swift = { "swiftformat" },
+		},
+	},
+}
 
 --[[
 local t= {
@@ -32,4 +33,5 @@ local t= {
     -- end, { desc = "Format file or range (in visual mode)" })
   end,
 }
-]]--
+]]
+--

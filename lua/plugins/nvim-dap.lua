@@ -7,7 +7,7 @@ local function setupListeners()
       areSet = true
       vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Continue", noremap = true })
       vim.keymap.set("n", "<leader>dC", dap.run_to_cursor, { desc = "Run To Cursor" })
-      vim.keymap.set("n", "<leader>ds", dap.step_over, { desc = "Step Over" })
+      vim.keymap.set("n", "<leader>dO", dap.step_over, { desc = "Step Over" })
       vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step Into" })
       vim.keymap.set("n", "<leader>do", dap.step_out, { desc = "Step Out" })
       vim.keymap.set({ "n", "v" }, "<Leader>dh", require("dap.ui.widgets").hover, { desc = "Hover" })
@@ -20,7 +20,7 @@ local function setupListeners()
       areSet = false
       vim.keymap.del("n", "<leader>dc")
       vim.keymap.del("n", "<leader>dC")
-      vim.keymap.del("n", "<leader>ds")
+      vim.keymap.del("n", "<leader>dO")
       vim.keymap.del("n", "<leader>di")
       vim.keymap.del("n", "<leader>do")
       vim.keymap.del({ "n", "v" }, "<Leader>dh")
@@ -53,13 +53,15 @@ return {
     --stylua: ignore start
     vim.keymap.set("n", "<leader>dd", xcodebuild.build_and_debug, { desc = "Build & Debug" })
     vim.keymap.set("n", "<leader>dr", xcodebuild.debug_without_build, { desc = "Debug Without Building" })
-    vim.keymap.set("n", "<leader>dt", xcodebuild.debug_tests, { desc = "Debug Tests" })
-    vim.keymap.set("n", "<leader>dT", xcodebuild.debug_class_tests, { desc = "Debug Class Tests" })
-    vim.keymap.set("n", "<leader>b", xcodebuild.toggle_breakpoint, { desc = "Toggle Breakpoint" })
-    vim.keymap.set("n", "<leader>B", xcodebuild.toggle_message_breakpoint, { desc = "Toggle Message Breakpoint" })
+    vim.keymap.set("n", "<leader>db", xcodebuild.toggle_breakpoint, { desc = "Toggle Breakpoint" })
+    vim.keymap.set("n", "<leader>dB", xcodebuild.toggle_message_breakpoint, { desc = "Toggle Message Breakpoint" })
+
+    vim.keymap.set("n", "<leader>tT", xcodebuild.debug_tests, { desc = "Debug Tests" })
+    vim.keymap.set("n", "<leader>tt", xcodebuild.debug_class_tests, { desc = "Debug Class Tests" })
+    vim.keymap.set("n", "<leader>tr", xcodebuild.debug_func_test, { desc = "Debug Nearest Tests" })
     --stylua: ignore end
 
-    vim.keymap.set("n", "<leader>dx", function()
+    vim.keymap.set("n", "<leader>dT", function()
       xcodebuild.terminate_session()
       require("dap").listeners.after["event_terminated"]["me"]()
     end, { desc = "Terminate debugger" })

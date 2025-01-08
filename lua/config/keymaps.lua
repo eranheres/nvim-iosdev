@@ -1,6 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+--vim.keymap.del("i", "<C-k>")
 
 -- xcodebuild keymaps
 
@@ -28,7 +29,12 @@ vim.keymap.set("n", "<leader>rp", "<cmd>XcodebuildSelectTestPlan<cr>", { desc = 
 vim.keymap.set("n", "<leader>rq", "<cmd>Telescope quickfix<cr>", { desc = "Show QuickFix List" })
 
 vim.keymap.set("n", "<leader>rx", "<cmd>XcodebuildQuickfixLine<cr>", { desc = "Quickfix Line" })
-vim.keymap.set("n", "<leader>ra", "<cmd>XcodebuildCodeActions<cr>", { desc = "Show Code Actions" })
+vim.keymap.set("n", "<leadgr>ra", "<cmd>XcodebuildCodeActions<cr>", { desc = "Show Code Actions" })
+
+vim.keymap.set('v', '<leader>ra', 'y:%s/<C-r>"//g<Left><Left>', { desc = "Replace all" })
+vim.keymap.set('v', '<leader>rs', ':s///g<Left><Left><Left>', { desc = "Replace in selection" })
 
 -- debugging
-require("common.config.common-keymaps")
+--require("common.config.common-keymaps")
+
+
